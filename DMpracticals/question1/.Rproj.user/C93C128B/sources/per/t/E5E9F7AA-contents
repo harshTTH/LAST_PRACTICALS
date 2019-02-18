@@ -1,0 +1,5 @@
+Age > 0
+Age <= 150
+Age > yearsmarried
+status %in% c('single','married','widowed')
+Age > 18 & agegroup == 'child'

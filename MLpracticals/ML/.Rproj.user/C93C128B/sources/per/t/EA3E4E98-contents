@@ -1,0 +1,11 @@
+train_data <- Cars93[c(1:30),]
+model<- lm(Horsepower~Cylinders+RPM+Price,data=train_data)
+test_data <- Cars93[c(31:37),13]
+predicted_value <- predict(model,test_data)
+
+predicted_value
+summary(model)
+
+plot(model,data=Cars93)
+
+
