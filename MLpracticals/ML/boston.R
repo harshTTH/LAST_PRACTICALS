@@ -6,5 +6,5 @@ predicted_value <- predict(model,test_data[-14])
 summary(model)
 plot(Boston$lstat,Boston$medv)
 abline(model,col=4)
-
+  
 

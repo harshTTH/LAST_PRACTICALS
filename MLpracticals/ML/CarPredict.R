@@ -6,7 +6,7 @@ predicted_value <- predict(model,test_data[-2])
 predicted_value
 summary(model)
 
-plot(cars$speed,cars$dist)
+plot(cars$dist,cars$speed,xlab="Distance",ylab="Speed",main="Car Prediction")
 abline(model,col=4)
 
 
