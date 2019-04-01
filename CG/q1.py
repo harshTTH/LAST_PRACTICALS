@@ -16,7 +16,15 @@ polynomial = np.polyfit([startx,endx],[starty,endy],1)
 slope = round(polynomial[0],3)
 intercept = round(polynomial[1],3)
 
-while(abs(startx) < abs(endx)):
+if(startx > endx):
+	startx,endx = endx,startx
+	starty,endy = endy,starty
+xpoints = [startx]
+ypoints = [starty]
+
+plt.plot([startx,endx],[starty,endy],color='green',label="Original Line")
+
+while(startx< endx):
 	startx += 1
 	yk = starty
 	y = func(startx,slope,intercept)
@@ -31,6 +39,10 @@ while(abs(startx) < abs(endx)):
 		starty = yk_1	
 	else:
 		starty = yk
-	plt.plot(startx,starty,'bs')
+	xpoints.append(startx)
+	ypoints.append(starty)	
+
+plt.plot(xpoints,ypoints,'bs',label="Calculated line")
 plt.grid(True)
+plt.legend()
 plt.show()	
